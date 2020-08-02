@@ -131,7 +131,7 @@ into the {body} of the default.hbs template --}}
             <div class="m-author__picture">
               <a href="{{primary_author.url}}" class="m-author-picture" aria-label="{{primary_author.name}}">
                 {{#if primary_author.profile_image}}
-                  <div style="background-image: url({{primary_author.profile_image}});"></div>
+                  <div style="background-image: url(https://res.cloudinary.com/computer-science-association/image/fetch/w_100/{{primary_author.profile_image}});"></div>
                 {{else}}
                   <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
                 {{/if}}
