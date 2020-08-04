@@ -75,7 +75,7 @@ $(document).ready(() => {
     const api = new GhostContentAPI({
       url: host,
       key,
-      version: 'v2'
+      version: 'v3'
     })
     const allPosts = []
     const fuseOptions = {
@@ -84,11 +84,12 @@ $(document).ready(() => {
       findAllMatches: true,
       includeScore: true,
       minMatchCharLength: 2,
-      keys: ['title', 'custom_excerpt']
+      keys: ['title', 'custom_excerpt', 'authors.name', 'tags.name']
     }
 
     api.posts.browse({
       limit: 'all',
+      include: 'authors,tags',
       fields: 'id, title, url, published_at, custom_excerpt'
     })
       .then((posts) => {
