@@ -108,8 +108,12 @@ into the {body} of the default.hbs template --}}
             </div>
           {{/if}}
         {{/get}}
+        {{!-- The tag below iterates over all the posts --}}
+        {{> "loop"}}
       </div>
     </div>
+    {{!-- Links to Previous/Next posts --}}
+    {{pagination}}
   </div>
 </main>
 
