@@ -108,8 +108,9 @@ into the {body} of the default.hbs template --}}
             </div>
           {{/if}}
         {{/get}}
-        {{!-- The tag below iterates over all the posts --}}
+        {{#get "posts" include="authors,tags" limit="10" order="featured DESC, published_at DESC" as |posts|}}
         {{> "loop"}}
+        {{/get}}
       </div>
     </div>
     {{!-- Links to Previous/Next posts --}}
