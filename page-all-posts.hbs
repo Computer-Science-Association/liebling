@@ -42,8 +42,9 @@ into the {body} of the default.hbs template --}}
   <div class="l-content">
     <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
       <div class="l-grid centered">
-        {{!-- The tag below iterates over all the posts --}}
+        {{#get "posts" include="authors,tags" limit="all" order="featured DESC, published_at DESC" as |posts|}}
         {{> "loop"}}
+        {{/get}}
       </div>
     </div>
   </div>
