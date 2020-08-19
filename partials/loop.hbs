@@ -1,7 +1,7 @@
 {{!-- The template below includes the markup for each post --}}
 
 {{#get "posts" include="authors,tags" limit="all" order="featured DESC, published_at DESC" as |posts|}}
-  {{#foreach posts from="6"}}
+  {{#foreach posts}}
     {{#is "post"}}
       <div class="m-recommended-slider__item glide__slide">
     {{/is}}
