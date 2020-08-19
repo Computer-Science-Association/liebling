@@ -6,11 +6,9 @@ This pagination template is used to navigate through newer and older articles.
   <nav class="m-pagination" aria-label="{{t "Pagination"}}">
     <span class="m-pagination__text">See all Posts</span>
     {{#if next}}
-      {{#get 'posts' filter="slug:all-posts" as |all-post|}}
-      <a href="{{all-post.url}}" class="m-icon-button filled in-pagination-right" aria-label="All-Post">
+      <a href="{{@site.url}}/all-posts/" class="m-icon-button filled in-pagination-right" aria-label="All-Post">
         <span class="icon-arrow-right"></span>
       </a>
-      {{/get}}
     {{/if}}
   </nav>
 </div>
